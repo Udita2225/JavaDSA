@@ -4,6 +4,7 @@ public class ProcesstoCreateShortcut {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //fori > enter (ShortCut for for loop)
+        //import java.util.* (It imports all the libraries in the file
         /*First select the syntax for which you have to create shortcut and copy it
         Ctrl+J
         Click the bulb icon on the lower bottom side
