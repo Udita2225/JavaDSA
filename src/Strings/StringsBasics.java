@@ -3,7 +3,7 @@ import java.util.*;
 public class StringsBasics {
     public static void main(String[] args) {
       char[] arr = new char[10];
-      //Strings are Character Array only
+      //Strings are Character Array only//Strings are Collection of Characters
        //integer array is array
        //character array is string
         /*

@@ -33,7 +33,8 @@ public class StringsBasics2 {
 3. indexOf()= String str = "Raghav"
               int idx = str.indexOf('a'); As there are two 'a' in the string. It will give the index of first Occurance i.e 1
               It gives the index of particular character.
-
+              Jab koi character hota hi nahi hai kisi particular string me to wo -1 return karta hai
+3.1.lastIndexOf() = s.lastIndexOf('a') = It gives the index of last occurence of a particular character
 4. compareTo() = Diverse Function
               It is used to compare two strings. If two strings are exactly same then it gives 0
               If one string is greater than the other lexographically then it givs a positive number
@@ -77,6 +78,8 @@ public class StringsBasics2 {
         System.out.println(Name.charAt(5));
         //indexOf();
         System.out.println(Name.indexOf('a'));
+        //lastIndexOf
+        System.out.println(Name.lastIndexOf('a'));
         //compareTo();
         String str =  "abc";
         String gtr =  "zbc";
