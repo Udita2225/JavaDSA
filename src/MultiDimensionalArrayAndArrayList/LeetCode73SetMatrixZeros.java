@@ -12,8 +12,9 @@ public class LeetCode73SetMatrixZeros {
     1 1 1       1 1 1
      */
 /*
-Is solution me ek extra helper array banaya gaya hai .Helper Array me Deep Copy kw through saare elements copy kiye gaye hain from arr
-Travel to Helper Array ME Kiya jaa raha hai But changes are made in the original arr
+Is solution me ek extra helper array banaya gaya hai .Helper Array me Deep Copy kw through saare elements copy kiye
+gaye hain from arr
+Travel to Helper Array Me Kiya jaa raha hai But changes are made in the original arr
 Is Method me problem ye hai ki ek aur array form kiya jaa raha hai jisse extra space use ho raha hai
 So this is not an optimised Solution
 We have to find an Optimised solution

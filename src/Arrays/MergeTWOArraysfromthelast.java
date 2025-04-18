@@ -40,7 +40,8 @@ public class MergeTWOArraysfromthelast {
     }
 
 }
-
+//Output
+//11 26 33 43 54 69 72 81 94 98
 
 
 

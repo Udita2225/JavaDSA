@@ -5,4 +5,5 @@ public class ContinuePrintingPrimeNumbersFrom1To100 {
     //kuchh Particular iterations ko skip kardo
 
 
+
 }

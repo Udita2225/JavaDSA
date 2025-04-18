@@ -9,16 +9,16 @@ public class SubstringijAndSubstringiFunction {
         Difference between subset/subsequence and substring
         substring - Continuous part of String (Ek sequence  me hi hona chahiye/ order aage peeche nahi hona chahiye
         Eg -
-        **substring(i,j) [FIRST INDEX AND LAST INDEX]
-        a, ab, abc, abcd, b, bc, bcd, c ,cd, d
+        **substring(i,j) [FIRST INDEX AND LAST INDEX] This gets part of string from i to j-1
+        a, ab, abc, abcd, b, bc, bcd, c ,cd, d, ""
         String s = "abcd"
         s.substring(0,3) - 0th index to (3-1)th index
                0 = included  3 = Excluded
         s.substring(0,0) = Nothing will be printed
-
+        s.substring(2,2) = Nothing will be printed //This is basically from index 2 to index 1
         **substring(i) [ONLY FIRST INDEX] Given Index ke aage ka sab kuchh print ho jayega
         String s = "abcd"
-        s.substring(1) = bcd
+        s.substring(1) = bcd index 1 aur uske aage ke saare characters print go gaye
 */
         String str = "abcde";
         System.out.println(str.substring(0,3)); //abc
