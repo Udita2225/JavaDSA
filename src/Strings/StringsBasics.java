@@ -13,6 +13,8 @@ public class StringsBasics {
         String str = "College Wallah";//int x = 5;
         //Starting String while declaration with Capital S is mandatory
         System.out.println(str);
+        String x =""; //Empty String
+        System.out.println(x.length()); //output 0
 
     }
 }

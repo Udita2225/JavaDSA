@@ -20,7 +20,8 @@ public class RotateTheArrayWithoutUsingExtraARRAY {
         reverse(array, n-k,n-1);
         reverse(array, 0,  n-1);
         for (int i = 0; i < n; i++) {
-            System.out.print(array[i]+" ");}
+            System.out.print(array[i]+" ");
+        }
 
         //In LeetCode
 //            public void reverse(int[] nums, int i, int j){

@@ -12,7 +12,7 @@ public class BasicOf2DArray {
       int[] arr = new int[n]; //For 1-D Array
       int[][] arr = new int[3][4]; //For 2-D Array (Imagine them as cells)
       //3 ROWS AND 4 COLUMNS; yaha par indexing 0 se shuru hoti hai 1, se nahi
-      (This is the differene between pattern printing and 2-D Array)
+      (This is the difference between pattern printing and 2-D Array)
 
       INITIALISING AND DECLARATION
       arr[1][3] = 7  1st row , 3rd column

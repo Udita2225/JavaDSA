@@ -14,7 +14,9 @@ public class InterningAndNewKeyword {
     This is called INTERN POOL
     Just like arrays
     int arr ={1,2,3} Array to same hi hai bas name change ho gaya hai
-    int brr ={1,2,3} String aur Arrays me bas ek difference hai ki Arrays me arr aur brr me se kisi me bhi changes karenge to wo doosre waale array me automatically reflect honge
+    int brr ={1,2,3}
+    brr[0] = 10;
+    String aur Arrays me bas ek difference hai ki Arrays me arr aur brr me se kisi me bhi changes karenge to wo doosre waale array me automatically reflect honge
     But Strings me esa nahi hota hai
      */
     /*

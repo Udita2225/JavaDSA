@@ -20,6 +20,7 @@ public class MergerTwoSortedArrays {
                 j++;
             }
             k++;}
+        //Edge Cases
         if(i==m){//Now take elements from b only
             while(j<n){
                 c[k]=b[j];
@@ -40,3 +41,5 @@ public class MergerTwoSortedArrays {
         }
 
     }
+//Output
+//11 26 33 43 54 69 72 81 94 98

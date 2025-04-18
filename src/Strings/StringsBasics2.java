@@ -57,13 +57,16 @@ public class StringsBasics2 {
 8. toLowerCase()= It converts the whole string into LOwerCase
                   str = Physics Wallah
                   System.out.print(str.toLowerCase()) //Bracket ke andar kuchh nahi likhna hota hai
-                  physic swallah
+                  physics wallah
+                  toLowerCase() ya toUpperCase() me karne ke liye ise sabse pehle store karna hota hai kisi string me
+                  tabhi print kar pate hain
+                  ya fir sout ke andar likhna hota hai
 9. toUpperCase()= It converts the whole string into UpperCase.
                   string.toUpperCase()
                   PHYSICS WALLAH
 10. concat() = concat is used to combine two strings (Concatinat)
                s1.concat(s2); s1 ke aage s2 lag jaata hai
-11. substring(i,j) & substring(i) =MOST IMPORTANT Explained in a new package
+11. substring(i,j) & substring(i) =MOST IMPORTANT Explained in a new file
 
 
  */     //length();
@@ -84,6 +87,13 @@ public class StringsBasics2 {
         String str =  "abc";
         String gtr =  "zbc";
         System.out.println(str.compareTo(gtr));
+        //Agar dono ki lengths same nahi hongi tab kisi bhi string me jitne extra characters hain wahi answer ho jayega
+        /*
+        Eg - String a = "abc"
+             String b = "abcggg"
+             System.out.println(a.compareTo(b));
+             //Output -3 because 3 extra characters hain string b me
+         */
         //contains(str)
         String name = "Physics Wallah";
         System.out.println(name.contains("Wal"));//true
@@ -100,13 +110,21 @@ public class StringsBasics2 {
         System.out.println(name.toLowerCase());
         //toUpperCase()
         System.out.println(name.toUpperCase());
+        /*
+        name.toUpperCase(); //Nothing will happen
+        String a = name.toUpperCase();
+         System.out.println(a)
+         Or
+        name = name.toUpperCase(); //This is also valid yaha par hamari name wali string
+                                    permanently UpperCase me convert ho gayi hai
+         */
         //concat()
         String s1 = "abc";
         String s2 = "bcd";
         String s3 = s1.concat(s2); //Ek nayi string ban rahi hai jisme s1 aur s2 ka mixture aa raha hai
         System.out.println(s3);
         System.out.println(s1.concat(s2));
-
+        //a.concat(b);  ->Nothing will happen
 
 
     }

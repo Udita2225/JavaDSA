@@ -1,11 +1,7 @@
 package Arrays;
 
 public class DutchFlagAlgorithmThreePointerMethod {
-    public static void swap(int[] arr, int x, int y){
-        int temp = arr[x];
-        arr[x] = arr[y];
-        arr[y] = temp;
-    }
+
     public static void main(String[] args) {
         //Sort the array of 0's, 1's and 2's
         //DUTCH FLAG METHOD/3-POINTER APPROACH(low, mid ,high)
@@ -41,8 +37,15 @@ public class DutchFlagAlgorithmThreePointerMethod {
 //                hi--;
             }
         }
+
         for(int i=0; i<n; i++){
             System.out.print(arr[i] +" ");
         }
     }
+    public static void swap(int[] arr, int x, int y){
+        int temp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = temp;
+    }
+
 }

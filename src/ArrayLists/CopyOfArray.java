@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 public class CopyOfArray {
     /*Shallow Copy
-    Isme real copy nahi hoti hai kisi bhi array ki bas ek doosra name de diya jaata  hai array ko
-    Jo changes hum shallow copy me karte hain wo original  array me bhi reflect hite hain
+    Isme real copy nahi hoti hai kisi bhi array ko bas ek doosra name de diya jaata  hai array ko
+    Jo changes hum shallow copy me karte hain wo original  array me bhi reflect hote hain
     */
     /*Deep Copy
     Yaha par real copy hoti hai kisi bhi array ki
-    Changes that are made in the Deep Copy does not gets reflected iin the original array
+    Changes that are made in the Deep Copy does not gets reflected in the original array
     There are two methods of making Deep Copy:-
     a. Using Built-In Methods
     b. By using Loops..(Each element gets copied one by one)

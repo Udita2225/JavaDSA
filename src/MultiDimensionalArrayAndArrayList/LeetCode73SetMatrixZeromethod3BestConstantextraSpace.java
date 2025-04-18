@@ -13,8 +13,10 @@ public class LeetCode73SetMatrixZeromethod3BestConstantextraSpace {
          We have done the marking in the array itself.
          We have first ignored the Zeroth column and zeroth Row
          And then after encountering Zero in the Remaining Array, we have done the marking in the Zeroth column and Zeroth Row.
-         After Marking, We initiate the loop only in the Zeroth Column and Zeroth Row and the after Finding Zero We make that whole Row or Column =0
-         Par is Algorithm me ek problem hai .. Jaise humne 0th Row Aur Zeorth Column ko marking ke liye use kiya hai  but agar 0th row aur 0th Column Me hi 0 aa gay to...
+         After Marking, We initiate the loop only in the Zeroth Column and Zeroth Row and the after Finding Zero We make that
+         whole Row or Column =0
+         Par is Algorithm me ek problem hai .. Jaise humne 0th Row Aur Zeroth Column ko marking ke liye use kiya hai  but agar
+         0th row aur 0th Column Me hi 0 aa gay to...
          In order to tackle this problem,
          We will take (VERY VERY IMPORTANT CONCEPT)
          boolean zeroRow = false;(Zeroth Row)
