@@ -23,6 +23,39 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
 */
 public class LeetCode145BTPostorderTraversalMorris {
 /*
+//Using Morris Traversal
+    class Solution {
+    public void Morris(TreeNode root){
+        TreeNode curr= root;
+        while(curr!=null){
+            if(curr.right!=null){
+                TreeNode l = curr.left;
+                curr.left = curr.right;
+                TreeNode pred = curr.right;
+                while(pred.left!=null)  pred = pred.left;
+                pred.left= l;
+                curr.right=null;
+                curr = curr.left;
+            }
+            else{
+                curr = curr.left;
+            }
+        }
+    }
+    public List<Integer> postorderTraversal(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    if(root==null) return ans;
+    Morris(root);
+    TreeNode temp =  root;
+    while(temp!=null){
+        ans.add(temp.val);
+        temp = temp.left;
+    }
+    Collections.reverse(ans);
+    return ans;
+    }
+}
+// Using Stack Iterative Solution
 class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
       Stack<TreeNode> st = new Stack<>();
