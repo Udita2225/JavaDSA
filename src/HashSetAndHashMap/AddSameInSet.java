@@ -1,4 +1,4 @@
-package HashMaps;
+package HashSetAndHashMap;
 import java.util.HashSet;
 public class AddSameInSet {
     public static void main(String[] args) {

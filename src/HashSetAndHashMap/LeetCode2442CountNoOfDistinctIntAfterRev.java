@@ -1,4 +1,4 @@
-package HashMaps;
+package HashSetAndHashMap;
 /*
 2442. Count Number of Distinct Integers After Reverse Operations
 You are given an array nums consisting of positive integers.

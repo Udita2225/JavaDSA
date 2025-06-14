@@ -22,7 +22,7 @@ public class CompositeNumberBREAKKeyword {
             //jaise ehi ek statement true ho jaaye loop toot jaana chahiye ..
             //iske liye break statement ka use kiya jaata hai
             //break lagane se loop bich me hi toot jaata hai
-        if(n==1) System.out.println("Neither PRIME nor COMPOSITE");
+        if(x==1) System.out.println("Neither PRIME nor COMPOSITE");
         else if(x==0){ System.out.println("Prime number");}
 
     }

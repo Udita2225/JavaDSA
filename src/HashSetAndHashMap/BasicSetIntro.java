@@ -1,4 +1,4 @@
-package HashMaps;
+package HashSetAndHashMap;
 import java.util.ArrayList;
 import java.util.HashSet;
 public class BasicSetIntro {
