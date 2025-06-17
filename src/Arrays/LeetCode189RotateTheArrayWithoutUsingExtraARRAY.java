@@ -1,6 +1,6 @@
 package Arrays;
 import java.util.Scanner;
-public class RotateTheArrayWithoutUsingExtraARRAY {
+public class LeetCode189RotateTheArrayWithoutUsingExtraARRAY {
     public static void reverse(int[] array, int i, int j) {
         while (i<=j) {
             int temp = array[i];
@@ -44,3 +44,21 @@ public class RotateTheArrayWithoutUsingExtraARRAY {
 
     }
 }
+/* By using extra Array
+class Solution {
+    public void rotate(int[] nums, int k) {
+    int n = nums.length;
+    k = k%n;
+    int[] helper = new int[n];
+    for(int i=0; i<k; i++){
+        helper[i]= nums[n-k+i];
+    }
+    for(int i=0; i<n-k; i++){
+        helper[i+k] = nums[i];
+    }
+    for(int i=0; i<helper.length; i++){
+        nums[i] = helper[i];
+    }
+    }
+}
+ */

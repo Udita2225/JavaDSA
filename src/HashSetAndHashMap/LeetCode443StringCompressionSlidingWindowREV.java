@@ -1,8 +1,8 @@
-package StringBuilderClass;
-import java.util.*;
-public class LeetCode443StringCompressionCode {
+package HashSetAndHashMap;
+
+public class LeetCode443StringCompressionSlidingWindowREV {
+//443. String Compression
 /*
-LeetCode 443. String Compression
 Given an array of characters chars, compress it using the following algorithm:
 Begin with an empty string s. For each group of consecutive repeating characters in chars:
 If the group's length is 1, append the character to s.
@@ -26,29 +26,34 @@ Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
 Constraints:
 1 <= chars.length <= 2000
 chars[i] is a lowercase English letter, uppercase English letter, digit, or symbol.
- */
-public static void main(String[] args) {
-    String  s = "aaaaaabbbbbbddddjjjhhh";
-    char[] arr = s.toCharArray();
-    String ans = "";
-    int i=0, j=0;
-    while(j<arr.length){
-       if(arr[i]==arr[j])  j++;
-       else {
-           ans += arr[i];
-           int len = j-i;
-           if(len>1) ans+=len;
-           i=j;
-       }
-    }
-    ans+= arr[i];
-    int len =j-i;
-    if(len>1) ans+=len;
-    System.out.println(ans);
-   }
-}
+*/
 /*
-This is an inefficient Code because string is immutable .
+class Solution {
+    public int compress(char[] chars) {
+        int n = chars.length;
+        int i=0; int j=0;
+        StringBuilder ans = new StringBuilder("");
+        while(j<n){
+            if(chars[i]==chars[j]) j++;
+            else{
+                ans.append(chars[i]);
+                int len = j-i;
+                if(len>1){
+                    ans.append(len);
+                }
+                i=j;
+            }
+        }
+        ans.append(chars[i]);
+        int len = j-i;
+        if(len>1) ans.append(len);
+        for(int k=0; k<ans.length(); k++){
+            chars[k] = ans.charAt(k);
+        }
+        return ans.length();
+    }
+}
+/*This is an inefficient Code because string is immutable .
 Java does not modify ans, it:
 Creates a new StringBuilder internally.
 Appends the old string and the new value.
@@ -82,32 +87,7 @@ class Solution {
         return ans.length();
     }
 }
- */
-/*
-class Solution {
-    public int compress(char[] chars) {
-        int n = chars.length;
-        int i=0; int j=0;
-        StringBuilder ans = new StringBuilder("");
-        while(j<n){
-            if(chars[i]==chars[j]) j++;
-            else{
-                ans.append(chars[i]);
-                int len = j-i;
-                if(len>1){
-                    ans.append(len);
-                }
-                i=j;
-            }
-        }
-        ans.append(chars[i]);
-        int len = j-i;
-        if(len>1) ans.append(len);
-        for(int k=0; k<ans.length(); k++){
-            chars[k] = ans.charAt(k);
-        }
-        return ans.length();
-    }
-}
 
- */
+
+*/
+}
