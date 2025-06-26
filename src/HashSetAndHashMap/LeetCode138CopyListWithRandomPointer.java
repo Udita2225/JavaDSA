@@ -31,5 +31,27 @@ Constraints:
 -104 <= Node.val <= 104
 Node.random is null or is pointing to some node in the linked list.
 
-*/
+/*
+class Solution {
+    public Node copyRandomList(Node head) {
+        HashMap<Node, Node> map=  new HashMap<>();
+        Node temp = head;
+        while(temp!=null){
+           Node temp1 = new Node(temp.val);
+           map.put(temp,temp1);
+           temp =temp.next;
+        }
+        for(Node key: map.keySet()){
+            Node copy =  map.get(key);
+            copy.next =  map.get(key.next);
+            // if(key.random==null) copy.random =null;
+            // else{
+            // copy.random = map.get(key.random);
+            // }
+            copy.random =  (key.random==null)?null:map.get(key.random);
+        }
+        return map.get(head);
+    }
+}
+ */
 }
