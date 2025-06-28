@@ -1,6 +1,6 @@
 package BinarySearch;
-import java.util.*;
-public class BinarySearchLeetCode704 {
+
+public class LeetCode704BinarySearch {
     public static void main(String[] args) {
      /*   class Solution {
             public int search(int[] nums, int target) {
