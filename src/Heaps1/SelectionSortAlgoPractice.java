@@ -1,4 +1,4 @@
-package Heaps;
+package Heaps1;
 
 public class SelectionSortAlgoPractice {
     public static void main(String[] args) {

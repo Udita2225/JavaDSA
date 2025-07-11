@@ -1,4 +1,4 @@
-package Heaps;
+package Heaps1;
 //Kth Smallest
 /*
 Given an array arr[] and an integer k where k is smaller than the size of the array, your task is to find the
