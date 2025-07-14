@@ -65,13 +65,13 @@ public class ArrayImplementationOfStack {
         st.display();//1 2 3
         System.out.println(st.peek());//3
         st.display();//1 2 3
-        System.out.println(st.isFull());
+        System.out.println(st.isFull());//false
         st.push(5);
-        st.display();
+        st.display();//1 2 3 5
         st.push(6);
-        st.display();
-        st.push(8);
-        st.display();
-        System.out.println(st.isFull());
+        st.display();//1 2 3 5 6
+        st.push(8);//Stack is full
+        st.display();//1 2 3 5 6
+        System.out.println(st.isFull());//true
     }
 }

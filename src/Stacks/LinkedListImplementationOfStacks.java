@@ -74,8 +74,8 @@ public class LinkedListImplementationOfStacks {
         System.out.println(st.size()); //2
         st.push(7);//4 5 7
         st.push(8);//4 5 7 8
-        st.display();
-        st.displayReverse();
-        System.out.println(st.size());
+        st.display();// 4 5 7 8
+        st.displayReverse();//8 7 5 4
+        System.out.println(st.size());//4
     }
 }
