@@ -33,6 +33,43 @@ bookings[i].length == 3
 */
 public class LeetCode1109CorporateFlightBookings {
 /*
-
+    //Optimised via Prefix Sum
+//Best Method
+//Using Prefix Sum
+//TC= O(n+m)
+    class Solution {
+        public int[] corpFlightBookings(int[][] bookings, int n) {
+            int[] ans = new int[n];
+            for(int i=0; i<bookings.length; i++){//O(m)
+                int first = bookings[i][0];
+                int last  = bookings[i][1];
+                int seats = bookings[i][2];
+                ans[first-1] += seats;
+                if(last<n) ans[last] -= seats;
+            }
+            for(int i=1; i<n; i++){//O(n)
+                ans[i] += ans[i-1];
+            }
+            return ans;//3ms
+        }
+    }
+/* TC :- O(m*n)
+// Brute Force Solution
+// This is a very bad code ..
+// It Takes 748ms which is very bad
+class Solution {
+    public int[] corpFlightBookings(int[][] bookings, int n) {
+    int[] ans = new int[n];
+    for(int i=0; i<bookings.length; i++){
+       int first = bookings[i][0];
+       int last = bookings[i][1];
+       int seats = bookings[i][2];
+       for(int j=first-1; j<last; j++){
+        ans[j] += seats;
+        }
+    }
+    return ans;
+    }
+}
 */
 }
