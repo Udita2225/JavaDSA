@@ -26,4 +26,31 @@ Constraints:
 -1000 <= target <= 1000
 */
 public class LeetCode494TargetSumMemoization {
+/*
+class Solution {
+    static int sum;
+    public int Ways(int i, int[] nums, int res, int target, int[][] dp){
+        if(i==nums.length) {
+            if(res==target) return 1;
+            else return 0;
+        }
+        if(dp[i][res+sum]!=-1) return dp[i][res+sum];
+        int add = Ways(i+1,nums,res-nums[i],target,dp);
+        int sub = Ways(i+1,nums,res+nums[i],target,dp);
+        return dp[i][res+sum] = add+sub;
+    }
+    public int findTargetSumWays(int[] nums, int target) {
+    // i -> 0 to n-1 || res = -sum to sum
+    // dp[i][res+sum] -> ways(i,res)
+    sum = 0;
+    int n = nums.length;
+    for(int ele:nums) sum+=ele;
+    int[][] dp = new int[n][2*sum+1];
+    for(int i=0; i<n; i++){
+        Arrays.fill(dp[i],-1);
+    }
+    return Ways(0,nums,0,target,dp);
+    }
+}
+ */
 }

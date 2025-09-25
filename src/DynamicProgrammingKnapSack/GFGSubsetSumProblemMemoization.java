@@ -25,7 +25,7 @@ Amazon Microsoft
 Topic Tags
 Dynamic Programming Algorithms
 */
-public class GFGSubsetSumProblem {
+public class GFGSubsetSumProblemMemoization {
 /*
 class Solution {
     static Boolean isSum(int i, int[] arr, int sum, int[][] dp){

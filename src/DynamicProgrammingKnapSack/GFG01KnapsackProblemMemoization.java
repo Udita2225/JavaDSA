@@ -28,7 +28,7 @@ FlipkartMorgan StanleyAmazonMicrosoftSnapdealOraclePayuVisaDirectiGreyOrangeMobi
 Topic Tags
 Dynamic ProgrammingAlgorithms
 */
-public class GFG01KnapsackProblem {
+public class GFG01KnapsackProblemMemoization {
 /*
 class Solution {
     static int profit(int i,int W,int[] val, int[] wt, int[][] dp){

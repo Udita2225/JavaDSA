@@ -14,7 +14,7 @@ public class KnapSack01Memoization {
     }
 
     public static void main(String[] args) {
-        int[] val = {5,3,9,16};
+        int[] val = {5,3,7,16};
         int[] wt =  {1,2,8,10};
         int capacity =8;
         int n =  wt.length;

@@ -15,7 +15,7 @@ Constraints:
 1 <= nums.length <= 200
 1 <= nums[i] <= 100
 */
-public class LeetCode416PartitionEqualSubsetSum {
+public class LeetCode416PartitionEqualSubsetSumMemoization {
 /*
 class Solution {
     public boolean isPossible(int i, int[] nums, int sum, int[][] dp){
