@@ -27,6 +27,60 @@ Longest Common Substring Dp 29Longest Common Substring Space Optimized Dp Soluti
 */
 public class GFGLongestCommonSubstring {
 /*
+class Solution {
+    int max = 0;
+    public int LongestSubstring(int i, int j, StringBuilder s1, StringBuilder s2, int[][] dp){
+        if(i<0 || j<0) return 0;
+        if(dp[i][j] != -1){
+            max = Math.max(dp[i][j], max);
+            return dp[i][j];
+        }
+        if(s1.charAt(i)==s2.charAt(j)){
+            dp[i][j] = 1 + LongestSubstring(i-1,j-1,s1,s2,dp);
+            max = Math.max(dp[i][j], max);
+            return dp[i][j];
+        }
+        else return dp[i][j] = 0;
+    }
+    public int longCommSubstr(String x, String y) {
+        // code here
+        int m = x.length();
+        int n = y.length();
+        StringBuilder s1 = new StringBuilder(x);
+        StringBuilder s2 = new StringBuilder(y);
+        int[][] dp = new int[m][n];
+        for(int i=0; i<m; i++){
+            Arrays.fill(dp[i], -1);
+        }
+        for(int i=m-1; i>=0; i--){
+            for(int j=n-1; j>=0; j--){
+                LongestSubstring(i,j,s1,s2,dp);
+            }
+        }
+        return max;
+    }
+}
+/*
+By Tabulation
+class Solution {
+    public int longCommSubstr(String s1, String s2) {
+        // code here
+        int m = s1.length();
+        int n = s2.length();
+        int[][] dp = new int[m+1][n+1];
+        int max = 0;
+        for(int i=1; i<=m; i++){
+            for(int j=1; j<=n; j++){
+                if(s1.charAt(i-1)==s2.charAt(j-1)){
+                    dp[i][j] = 1 + dp[i-1][j-1];
+                    max = Math.max(dp[i][j], max);
+                }
+                else dp[i][j] = 0;
+            }
+        }
+        return max;
+    }
+}
 
 */
 }

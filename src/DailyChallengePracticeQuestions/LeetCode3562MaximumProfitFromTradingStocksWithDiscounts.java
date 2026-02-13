@@ -1,0 +1,4 @@
+package DailyChallengePracticeQuestions;
+
+public class LeetCode3562MaximumProfitFromTradingStocksWithDiscounts {
+}
