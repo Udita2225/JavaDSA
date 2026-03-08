@@ -28,6 +28,31 @@ Longest Common Substring Dp 29Longest Common Substring Space Optimized Dp Soluti
 public class GFGLongestCommonSubstring {
 /*
 class Solution {
+    static int matrixMultiplication(int arr[]) {
+        // code here
+        int n = arr.length-1;
+        int[][] dp = new int[n][n];
+        for(int i=n-1; i>=0; i--){
+            for(int j=0; j<=n-1; j++){
+                if(i==j) dp[i][j] = 0;
+                else{
+                int minCost =  Integer.MAX_VALUE;
+                for(int k=i; k<j; k++){
+                    int x = arr[i] * arr[k+1] * arr[j+1];
+                    int tc = dp[i][k] + dp[k+1][j] + x;
+                    minCost =  Math.min(minCost,tc);
+                }
+                dp[i][j] =  minCost;
+                }
+            }
+        }
+        return dp[0][n-1];
+    }
+}
+ */
+
+/*
+class Solution {
     int max = 0;
     public int LongestSubstring(int i, int j, StringBuilder s1, StringBuilder s2, int[][] dp){
         if(i<0 || j<0) return 0;

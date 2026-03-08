@@ -39,6 +39,30 @@ Matrix Chain Multiplication Dp 8
 public class GFGMatrixChainMultiplication {
     /*
     class Solution {
+    static int matrixMultiplication(int arr[]) {
+        // code here
+        int n = arr.length-1;
+        int[][] dp = new int[n][n];
+        for(int i=0; i<n-1; i++){
+            int m = 0;
+            int j=i+1;
+            while(j<n){
+                int min = Integer.MAX_VALUE;
+                for(int k=m; k<j; k++){
+                    int x = arr[m] * arr[k+1] * arr[j+1];
+                    int tc = dp[m][k] + dp[k+1][j] + x;
+                    min =  Math.min(min,tc);
+                }
+                dp[m++][j++] = min;
+            }
+        }
+        return dp[0][n-1];
+    }
+}
+    */
+
+    /*
+    class Solution {
     static int mcm(int i, int j, int[] arr, int[][] dp){
         if(i==j) return 0;
         if(dp[i][j] != -1) return dp[i][j];
