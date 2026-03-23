@@ -27,6 +27,7 @@ K K K
 A K A
 */
 public class PlaceKknightsSuchThatTheyDoNotAttackEachOther {
+
     // Print Function
     public static void printGrid(char[][] grid){
         int row = grid.length;
@@ -97,61 +98,47 @@ public class PlaceKknightsSuchThatTheyDoNotAttackEachOther {
         // Check Left-Down
         i = row+1;
         j = col-2;
-        if(i<m && j<n){
+        if(i<m && j>=0){
             if(grid[i][j]=='K') return false;
         }
         return true;
     }
-    public static void printKKnights(int row, int col, char[][] grid, int k){
+    public static void printKKnights(int row, int col, char[][] grid, int K, int count){
         int m = grid.length;
         int n = grid[0].length;
-        if(k==0){
-            printGrid(grid);
+        if(row==m){
+            if(K==count){
+                printGrid(grid);
+            }
             return;
         }
-        if(row>=m || col>=n) return;
-        for(int i=row; i<m; i++) {
-            for(int j=col; j<n; j++){
-            if (isSafe(i, j, grid)) {
-                grid[i][j] = 'K';
-                printKKnights(i, j, grid, k--);
-                grid[i][j] = 'X';
-                }
-            }
+        else if(isSafe(row,col,grid)){
+            grid[row][col] = 'K';
+            if(col!=n-1) printKKnights(row,col+1,grid,K,count+1);
+            else printKKnights(row+1,0,grid,K,count+1);
+            grid[row][col] = '.';
         }
-        return;
+        if(col!=n-1) printKKnights(row,col+1,grid,K,count);
+        else printKKnights(row+1,0,grid,K,count);
     }
 
     public static void KKnights(int M, int N, int K){
     char[][] grid = new char[M][N];
-    if(K==(M*N)){
-        for(int i=0; i<M; i++){
-            for(int j=0; j<N; j++){
-                grid[i][j] = 'K';
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
+                grid[i][j] = '.';
             }
         }
-        printGrid(grid);
-        return;
-    }
-    for(int i=0; i<M; i++){
-        for(int j=0; j<N; j++){
-            grid[i][j] = 'X';
-        }
-    }
-    printKKnights(0,0,grid,K);
-
+        printKKnights(0, 0, grid, K, 0);
     }
     static void main() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter M: ");
         int M = sc.nextInt();
-        System.out.println();
         System.out.print("Enter N: ");
         int N = sc.nextInt();
-        System.out.println();
         System.out.print("Enter K: ");
         int K = sc.nextInt();
-        System.out.println();
         KKnights(M, N, K);
     }
 }
