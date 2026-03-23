@@ -29,6 +29,84 @@ Constraints:
 public class LeetCode52NQueen2 {
     /*
 
+    class Solution {
+    public boolean isSafe(int row, int col, char[][] board){
+        int n =  board.length;
+        // Check rows;
+        for(int j=0; j<n; j++){
+            if(board[row][j]=='Q') return false;
+        }
+        //Check Column
+        for(int i=0; i<n; i++){
+            if(board[i][col]=='Q') return false;
+        }
+
+        //Check North East
+        int i = row;
+        int j = col;
+        while(i>=0 && j<n){
+            if(board[i][j]=='Q') return false;
+            i--;
+            j++;
+        }
+
+        //Check North West
+        i=row;
+        j=col;
+        while(i>=0 && j>=0){
+            if(board[i][j]=='Q') return false;
+            i--;
+            j--;
+        }
+
+        //Check South East
+        i=row;
+        j=col;
+        while(i<n && j<n){
+            if(board[i][j]=='Q') return false;
+            i++;
+            j++;
+        }
+
+        //Check South West
+        i=row;
+        j=col;
+        while(i<n && j>=0){
+            if(board[i][j]=='Q') return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+
+    public void NQueens(int row, char[][] board, int[] ans){
+        int n = board.length;
+        if(row==n){
+            ans[0]++;
+            return;
+        }
+        for(int j=0; j<n; j++){
+            if(isSafe(row,j,board)){
+                board[row][j] = 'Q';
+                NQueens(row+1,board,ans);
+                board[row][j] = 'X';
+            }
+        }
+        return;
+    }
+    public int totalNQueens(int n) {
+    char[][] board = new char[n][n];
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            board[i][j] = 'X';
+        }
+    }
+    int[] ans = new int[1];
+    NQueens(0,board,ans);
+    return ans[0];
+    }
+}
+
 class Solution {
     public boolean isSafe(char[][] board, int row, int col){
         int n = board.length;
