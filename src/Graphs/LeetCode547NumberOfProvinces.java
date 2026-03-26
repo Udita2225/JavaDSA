@@ -37,4 +37,69 @@ isConnected[i][i] == 1
 isConnected[i][j] == isConnected[j][i]
 */
 public class LeetCode547NumberOfProvinces {
+    /*
+    // TC-> O(n^2) SC->O(n)
+class Solution {
+    public void bfs(int[][] adj, boolean[] isVisited,int i){
+        int n = adj.length;
+        Queue<Integer> q = new LinkedList<>();
+        q.add(i);
+        isVisited[i] = true;
+        while(!q.isEmpty()){
+            int idx = q.remove();
+            for(int j=0; j<n; j++){
+                int child = adj[idx][j];
+                if(child!=0 && isVisited[j]==false){
+                    isVisited[j] = true;
+                    q.add(j);
+                }
+            }
+        }
+    }
+    public int findCircleNum(int[][] adj) {
+        int n = adj.length;
+        boolean[] isVisited = new boolean[n];// by-default -> false
+        int count = 0;
+        for(int i=0; i<n; i++){
+            if(!isVisited[i]) {
+                bfs(adj,isVisited,i);
+                count++;
+            }
+        }
+        return count;
+    }
+}
+/*
+Not a very good code, it can give Time Limit Exceeded  if the test case is Large
+class Solution {
+    public void BFS(int[][] isConnected, List<Integer> arr, boolean[] isVisited, int idx){
+        Queue<Integer> q = new LinkedList<>();
+        q.add(idx);
+        isVisited[idx] = true;
+        while(q.size()!=0){
+            int j = q.remove();
+            arr.add(j);
+            for(int i=0; i<isConnected[0].length; i++){
+                if(isConnected[j][i]!=0 && isVisited[i]==false) {
+                    isVisited[i] = true;
+                    q.add(i);
+                }
+            }
+        }
+    }
+    public int findCircleNum(int[][] isConnected) {
+    int n = isConnected.length;
+    HashSet<List<Integer>> set = new HashSet<>();
+    for(int i=0; i<n; i++){
+        boolean[] isVisited = new boolean[n];
+        List<Integer> arr = new ArrayList<>();
+        BFS(isConnected,arr,isVisited,i);
+        Collections.sort(arr);
+        set.add(arr);
+    }
+    return set.size();
+    }
+}
+*/
+
 }
