@@ -41,7 +41,7 @@ All the values of rooms[i] are unique.
 
 
 */
-public class LeetCode841KeysAndRooms {
+public class LeetCode841KeysAndRoomsBFS {
     /*
     class Solution {
     static int count = 1;

@@ -36,7 +36,7 @@ ui != vi
 There are no duplicate edges.
 There are no self edges.
 */
-public class LeetCode1971FindIfPathExistsInGraph {
+public class LeetCode1971FindIfPathExistsInGraphBFS {
 /*
 class Solution {
     public void bfs(int source,int destination, boolean[] isVisited, List<List<Integer>> arr){

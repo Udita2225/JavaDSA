@@ -36,7 +36,7 @@ isConnected[i][j] is 1 or 0.
 isConnected[i][i] == 1
 isConnected[i][j] == isConnected[j][i]
 */
-public class LeetCode547NumberOfProvinces {
+public class LeetCode547NumberOfProvincesBFS {
     /*
     // TC-> O(n^2) SC->O(n)
 class Solution {
