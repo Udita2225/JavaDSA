@@ -42,4 +42,36 @@ All the values of rooms[i] are unique.
 
 */
 public class LeetCode841KeysAndRooms {
+    /*
+    class Solution {
+    static int count = 1;
+    public void bfs(List<List<Integer>> rooms,boolean[] isVisited){
+        Queue<Integer> q = new LinkedList<>();
+        q.add(0);
+        isVisited[0] = true;
+        while(!q.isEmpty()){
+            int idx = q.remove();
+            List<Integer> arr = rooms.get(idx);
+            for(int j=0; j<arr.size(); j++){
+                int Index = arr.get(j);
+                if(isVisited[Index]==false){
+                    count++;
+                    q.add(Index);
+                    isVisited[Index] = true;
+                }
+            }
+        }
+    }
+    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+    count = 1;
+    int n = rooms.size();
+    boolean[] isVisited = new boolean[n];
+    bfs(rooms, isVisited);
+    // for(int i=0; i<n; i++){
+    //     if(isVisited[i]==false) return false;
+    // }
+    return count==n;
+    }
+}
+     */
 }
