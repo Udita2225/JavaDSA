@@ -42,4 +42,67 @@ All the values of graph[u] are unique.
 If graph[u] contains v, then graph[v] contains u.
 */
 public class LeetCode785IsGraphBipartite {
+    /*
+    class Solution {
+    public boolean dfs(int i, int parentColor, int[][] graph, int[] isVisited){
+    if(parentColor==0 || parentColor==2) isVisited[i] = 1;
+    else if(parentColor==1) isVisited[i] = 2;
+    int[] list =  graph[i];
+    for(int j=0; j<list.length; j++){
+        int child = list[j];
+        if(isVisited[child]==0){
+            if(!dfs(child,isVisited[i],graph,isVisited)) return false;
+        }
+        else if(isVisited[child]!=0 && isVisited[child]==isVisited[i]) return false;
+    }
+    return true;
+    }
+    public boolean isBipartite(int[][] graph) {
+    int n = graph.length;
+    int[] isVisited = new int[n];
+    // We have to check all the vertices as there may be more than one component in the graph
+    for(int i=0; i<n; i++){
+        if(isVisited[i]==0) {
+            if(!dfs(i,0,graph,isVisited)) return false;
+        }
+    }
+    return true;
+    }
+}
+/*
+/*class Solution {
+    public boolean bfs(int idx ,int[][] graph, int[] isVisited){
+        isVisited[idx] = 1;
+        Queue<Integer> q = new LinkedList<>();
+        q.add(idx);
+        while(q.size()!=0){
+            int front = q.remove();
+            int[] arr = graph[front];
+            for(int i=0; i<arr.length; i++){
+                int ele = arr[i];
+                if(isVisited[ele]==isVisited[front]) return false;
+                if(isVisited[ele]==0){
+                    q.add(ele);
+                    if(isVisited[front]==1) isVisited[ele] = 2;
+                    else isVisited[ele] = 1;
+                }
+            }
+        }
+        return true;
+    }
+    public boolean isBipartite(int[][] graph) {
+    int n = graph.length;
+    int[] isVisited =  new int[n];
+    for(int i=0; i<n; i++){
+    if(isVisited[i]==0){
+    if(!bfs(i,graph,isVisited)) return false;
+
+    }
+    }
+    return true;
+    }
+}
+*/
+
+
 }
