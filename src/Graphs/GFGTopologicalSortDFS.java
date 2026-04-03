@@ -35,7 +35,7 @@ MoonfrogLabs  Flipkart MorganStanley Accolite AmazonMicrosoft OYORooms Samsung D
 Topic Tags
 Graph Data Structures topological-sort
 */
-public class GFGTopologicalSort {
+public class GFGTopologicalSortDFS {
     /*
     class Solution {
     public void dfs(int i, boolean[] isVisited, List<List<Integer>> adj, List<Integer> ans){
