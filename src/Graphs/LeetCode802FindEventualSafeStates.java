@@ -46,6 +46,7 @@ public class LeetCode802FindEventualSafeStates {
     int n = graph.length;
     // 1. Reverse the graph
     List<List<Integer>> adj =  new ArrayList<>();
+    int[] InDegree = new int[n];
     for(int i=0; i<n; i++){
         adj.add(new ArrayList<>());
     }
@@ -53,24 +54,26 @@ public class LeetCode802FindEventualSafeStates {
         int[] arr = graph[i];
         for(int j=0; j<arr.length; j++){
             adj.get(arr[j]).add(i);
+            inDegree[i]++;
         }
     }
     //Kahns Algorithm
     // Queue declaration
     Queue<Integer> q = new LinkedList<>();
     // InDegree Array Formation
-    int[] InDegree = new int[n];
-    for(int i=0; i<n; i++){
-        List<Integer> arr = adj.get(i);
-        for(int j=0; j<arr.size(); j++){
-            InDegree[arr.get(j)]++;
-        }
-    }
+//    int[] InDegree = new int[n];
+//    for(int i=0; i<n; i++){
+//        List<Integer> arr = adj.get(i);
+//        for(int j=0; j<arr.size(); j++){
+//            InDegree[arr.get(j)]++;
+//        }
+//    }
 
     // Add nodes with 0 InDegree in the Queue
     for(int i=0; i<n; i++){
         if(InDegree[i]==0) q.add(i);
     }
+
 
     // Queue Operations
     List<Integer> ans = new ArrayList<>();
@@ -88,4 +91,5 @@ public class LeetCode802FindEventualSafeStates {
     }
 }
      */
+
 }
