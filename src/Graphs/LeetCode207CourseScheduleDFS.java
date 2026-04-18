@@ -10,7 +10,7 @@ public class LeetCode207CourseScheduleDFS {
             if(!isVisited[ele]){
             if(dfs(ele,isVisited,inPath,adj)) return true;
             }
-            else if(inPath[ele]) return true;
+            else if(inPath[ele]) return true; // Cycle present
         }
         inPath[i] = false;
         return false;
