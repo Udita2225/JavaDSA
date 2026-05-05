@@ -1,6 +1,7 @@
 package Graphs;
 
 import java.util.ArrayList;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -43,6 +44,7 @@ public class DijkstrasAlgorithmUsingQueues {
         }
         return dist;
     }
+
     static void main() {
         List<List<Pair>> adj =  new ArrayList<>();
         for(int i=0; i<5; i++){
@@ -64,10 +66,12 @@ public class DijkstrasAlgorithmUsingQueues {
         adj.get(4).add(new Pair(3,6));
 
         // Get the shortest distance from Node 0
+
         System.out.println("Shortest distance to all the Nodes from 0");
         int[] ans = bfs(adj,0);
         for(int i=0; i<ans.length; i++){
             System.out.print(ans[i] + " ");
         }
+
     }
 }
