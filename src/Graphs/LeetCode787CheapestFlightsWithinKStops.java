@@ -51,4 +51,184 @@ There will not be any multiple flights between two cities.
 src != dst
 */
 public class LeetCode787CheapestFlightsWithinKStops {
+/*
+class Solution {
+     public class Triplet{
+        int node;
+        int cost;
+        int stop;
+        public Triplet(int node, int cost, int stop){
+            this.node = node;
+            this.cost = cost;
+            this.stop = stop;
+        }
+    }
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+     int m = flights.length;
+    List<List<Triplet>> adj =  new ArrayList<>();
+    for(int i=0; i<n; i++){
+        adj.add(new ArrayList<>());
+    }
+    for(int i=0; i<m; i++){
+        int x = flights[i][0];
+        int y = flights[i][1];
+        int cost =  flights[i][2];
+        adj.get(x).add(new Triplet(y,cost,1));
+    }
+    Queue<Triplet> q =  new LinkedList<>();
+    q.add(new Triplet(src,0,0));
+    int[] arr = new int[n];
+    for(int i=0; i<n; i++){
+        arr[i] =  Integer.MAX_VALUE;
+    }
+    arr[src] = 0;
+    while(q.size()>0){
+        Triplet top = q.remove();
+        int node = top.node;
+        int cost = top.cost;
+        int stop =  top.stop;
+        // if(node==dst && stop<=k+1) return cost;
+        if(stop>=k+1) continue;
+        for(Triplet t: adj.get(node)){
+            int Node = t.node;
+            int newCost = t.cost + cost;
+            int newStop = stop + 1;
+            if(arr[Node]>newCost && newStop<=k+1){
+                    arr[Node] = newCost;
+                    q.add(new Triplet(Node,newCost,newStop));
+            }
+        }
+    }
+    return (arr[dst]==Integer.MAX_VALUE) ? -1 : arr[dst];
+    }
+}
+ */
+
+
+//    We can solve this problem using simple Queue
+
+
+    /*
+    // By Using Only 1-D Array
+// By Comparing Through No. of stops, we actually dont need a priorityQueue
+// This is sir's method
+class Solution {
+    public class Triplet implements Comparable<Triplet>{
+        int node;
+        int cost;
+        int stop;
+        public Triplet(int node, int cost, int stop){
+            this.node = node;
+            this.cost = cost;
+            this.stop = stop;
+        }
+        public int compareTo(Triplet t){
+            return this.stop - t.stop;
+        }
+    }
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+    int m = flights.length;
+    List<List<Triplet>> adj =  new ArrayList<>();
+    for(int i=0; i<n; i++){
+        adj.add(new ArrayList<>());
+    }
+    for(int i=0; i<m; i++){
+        int x = flights[i][0];
+        int y = flights[i][1];
+        int cost =  flights[i][2];
+        adj.get(x).add(new Triplet(y,cost,1));
+    }
+    PriorityQueue<Triplet> pq =  new PriorityQueue<>();
+    pq.add(new Triplet(src,0,0));
+    int[] arr = new int[n];
+    for(int i=0; i<n; i++){
+        arr[i] =  Integer.MAX_VALUE;
+    }
+    arr[src] = 0;
+    while(pq.size()>0){
+        Triplet top = pq.remove();
+        int node = top.node;
+        int cost = top.cost;
+        int stop =  top.stop;
+        // if(node==dst && stop<=k+1) return cost;
+        if(stop>=k+1) continue;
+        for(Triplet t: adj.get(node)){
+            int Node = t.node;
+            int newCost = t.cost + cost;
+            int newStop = stop + 1;
+            if(arr[Node]>newCost && newStop<=k+1){
+                    arr[Node] = newCost;
+                    pq.add(new Triplet(Node,newCost,newStop));
+            }
+        }
+    }
+    for(int i=0; i<n; i++){
+            System.out.println(arr[i]);
+        }
+    return (arr[dst]==Integer.MAX_VALUE) ? -1 : arr[dst];
+    }
+}
+     */
+
+/*
+My Method - Using 2-D Array
+class Solution {
+    public class Triplet implements Comparable<Triplet>{
+        int node;
+        int cost;
+        int stop;
+        public Triplet(int node, int cost, int stop){
+            this.node = node;
+            this.cost = cost;
+            this.stop = stop;
+        }
+        public int compareTo(Triplet t){
+            return this.cost - t.cost;
+        }
+    }
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+    int m =  flights.length;
+    List<List<Triplet>> adj =  new ArrayList<>();
+    for(int i=0; i<n; i++){
+        adj.add(new ArrayList<>());
+    }
+    for(int i=0; i<m; i++){
+        int x = flights[i][0];
+        int y = flights[i][1];
+        int cost =  flights[i][2];
+        adj.get(x).add(new Triplet(y,cost,0));
+    }
+    int[][] grid = new int[n][k+1];
+    for(int i=0; i<n; i++){
+        for(int j=0; j<=k; j++){
+            grid[i][j] =  Integer.MAX_VALUE;
+        }
+    }
+    grid[src][0] = 0;
+    PriorityQueue<Triplet> pq =  new PriorityQueue<>();
+    pq.add(new Triplet(src,0,0));
+    while(pq.size()>0){
+        Triplet top = pq.remove();
+        int node = top.node;
+        int cost = top.cost;
+        int stop = top.stop;
+            for(Triplet t: adj.get(node)){
+                int x = t.node;
+                int c = t.cost;
+                int newStop = stop+1;
+                int newCost = cost + c;
+                if(newStop-1 <= k && grid[x][newStop-1]>newCost){
+                    grid[x][newStop-1]  =  newCost;
+                    pq.add(new Triplet(x,newCost,newStop));
+           }
+        }
+    }
+    int min = Integer.MAX_VALUE;
+    for(int i=0; i<=k; i++){
+        min =  Math.min(grid[dst][i],min);
+    }
+    return min==Integer.MAX_VALUE?-1:min;
+  }
+}
+ */
 }
