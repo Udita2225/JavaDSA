@@ -27,7 +27,7 @@ ui != vi
 0 <= wi <= 100
 All the pairs (ui, vi) are unique. (i.e., no multiple edges.)
 */
-public class LeetCode743NetworkDelayTime {
+public class LeetCode743NetworkDelayTimeDijkstrasAlgo {
     /*
     class Pair implements Comparable<Pair>{
     int node;
