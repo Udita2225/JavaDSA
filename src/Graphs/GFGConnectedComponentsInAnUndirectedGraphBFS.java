@@ -30,7 +30,7 @@ NPCI
 Topic Tags
 Graph union-find DFS BFS
 */
-public class GFGConnectedComponentsInAnUndirectedGraph {
+public class GFGConnectedComponentsInAnUndirectedGraphBFS {
     /*
     class Solution {
     public ArrayList<ArrayList<Integer>> getComponents(int V, int[][] edges) {
