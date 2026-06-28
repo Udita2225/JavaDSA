@@ -37,7 +37,7 @@ Constraints:
 All pairs (xi, yi) are distinct.
 
 */
-public class LeetCode1584MinCostToConnectAllPoints {
+public class LeetCode1584MinCostToConnectAllPointsPrimsAlgorithm {
     /*
     // This is the best code. I have used Indexes here instead of arrays or pairs
 class Solution {
